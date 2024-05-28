@@ -10,14 +10,16 @@ Route::get('/', function () {
 
 //---------- jobs page route ------------------
 Route::get('/jobs', function (){
+    /* $job = Job::with('employer')->get(); */
+    $job = Job::with('employer')->paginate(3);//simplePaginate() and cursorPaginate() are more efficient for large database queries
     return view('jobs',[
-        'jobs' =>  Job::all()
+        'jobs' =>  $job
     ]);
 });
 
 //---------- job page route --------------------
 Route::get('/jobs/{id}', function($id){
-   
+
     $job = Job::find($id);
     if(! $job ) abort(404);
 
