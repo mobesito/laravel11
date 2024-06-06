@@ -77,19 +77,8 @@
             <button form="delete-form" class="font-semibold text-red-500">Delete</button>
 
             <div>
-                <a
-                href="/jobs/{{$job->id}}"
-                type="button"
-                class="text-sm font-semibold leading-6 text-gray-900"
-            >
-                Cancel
-            </a>
-            <button
-                type="submit"
-                class="rounded-md bg-indigo-600 ml-8 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-                Update
-            </button>
+            <x-form-cancel-button href='/jobs/{{$job->id}}'>Cancel</x-form-cancel-button>
+            <x-form-button>Update</x-form-button>
             </div>
 
         </div>

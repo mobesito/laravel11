@@ -6,6 +6,7 @@ use App\Models\Job;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Factories\PostFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,6 +23,14 @@ class DatabaseSeeder extends Seeder
             'email' => 'edwin54.ayala@gmail.com',
         ]);
 
-        $this->call(JobSeeder::class);
+        $this->call([
+
+            JobSeeder::class,
+            PostSeeder::class,
+            TagSeeder::class,
+            PostTagSeeder::class
+
+        ]);
+
     }
 }
