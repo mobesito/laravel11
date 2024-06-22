@@ -10,7 +10,9 @@
     <p>
         This job pays {{ $job->salary }} per year.
     </p>
-    <div class="my-10">
-        <x-button href="{{ $job->id }}/edit">Edit</x-button>
-    </div>
+    @can('edit', $job)
+        <div class="my-10">
+            <x-button href="{{ $job->id }}/edit">Edit</x-button>
+        </div>
+    @endcan
 </x-layout>
